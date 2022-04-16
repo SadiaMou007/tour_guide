@@ -23,6 +23,16 @@ const Header = () => {
                   About
                 </Link>
               </Nav.Link>
+              <Nav.Link href="#services">
+                <Link to={"/services"} className="item">
+                  Services
+                </Link>
+              </Nav.Link>
+              <Nav.Link href="#blogs">
+                <Link to={"/blogs"} className="item">
+                  Blogs
+                </Link>
+              </Nav.Link>
               <Nav.Link href="#login">
                 <Link to={"/login"} className="item">
                   Login

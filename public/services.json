@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "img": "http://placehold.it/32x32",
+    "title": "THE SEA EXPLORER",
+
+    "time": "3",
+    "people": "20-30",
+    "description": "Sleep in cozy hotel",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "2",
+    "img": "http://placehold.it/32x32",
+    "title": "THE FOREST HIKER",
+
+    "time": "7",
+    "people": "10-15",
+    "description": "Sleep in provided tents",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "3",
+    "img": "http://placehold.it/32x32",
+    "title": "THE SNOW ANVENTURER",
+
+    "time": "5",
+    "people": "15-25",
+    "description": "Sleep in provided tents",
+    "difficulty": "Hard"
+  }
+]
