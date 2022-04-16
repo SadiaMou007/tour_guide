@@ -1,0 +1,12 @@
+.my-nav {
+  background-image: linear-gradient(rgb(9, 92, 9), rgb(56, 165, 56));
+}
+.item {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.item:hover {
+  color: antiquewhite;
+}
