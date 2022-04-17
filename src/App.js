@@ -12,6 +12,7 @@ import Blogs from "./Pages/Blogs/Blogs";
 import Service from "./Pages/Service/Service";
 import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 import ServiceBooking from "./Pages/ServiceBooking/ServiceBooking";
+import SignUp from "./Pages/SignUp/SignUp";
 
 function App() {
   return (
@@ -25,14 +26,16 @@ function App() {
         <Route path="/services" element={<Services></Services>}></Route>
         <Route path="/service" element={<Service></Service>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route
-          path="/serviceBooking"
+          path="/service/:serviceId"
           element={
             <RequireAuth>
               <ServiceBooking></ServiceBooking>
             </RequireAuth>
           }
         ></Route>
+
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <Footer></Footer>
