@@ -19,10 +19,6 @@ const SignUp = () => {
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-  const [email, setEmail] = useState({ value: "", error: "" });
-  const [password, setPassword] = useState({ value: "", error: "" });
-  const [cpassword, setCpassword] = useState({ value: "", error: "" });
-
   const handleSignUp = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -38,6 +34,9 @@ const SignUp = () => {
 
   if (user) {
     console.log("user", user);
+  }
+  if (error) {
+    console.log(error.message);
   }
 
   return (

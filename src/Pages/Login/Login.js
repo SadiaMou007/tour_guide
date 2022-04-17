@@ -30,7 +30,6 @@ const Login = () => {
 
   const handlePasswordReset = async () => {
     const email = emailRef.current.value;
-
     await sendPasswordResetEmail(email);
     alert("Sent email");
   };
