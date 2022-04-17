@@ -82,6 +82,15 @@ const SignUp = () => {
               />
             </div>
           </div>
+          <div>
+            <input
+              type="checkbox"
+              name="terms"
+              id="terms"
+              className="p-2 ms-3 me-2"
+            />
+            <label htmlFor="terms">Accept our terms and conditions? </label>
+          </div>
           <div className="p-3">
             <button
               type="submit"
@@ -92,7 +101,7 @@ const SignUp = () => {
           </div>
           <p className="text-center mb-3">
             Already have an account?{" "}
-            <Link to={"/login"} className="text-decoration-none text-danger">
+            <Link to={"/login"} className="text-decoration-none text-primary">
               Login
             </Link>{" "}
           </p>

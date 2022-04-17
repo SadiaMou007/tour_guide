@@ -1,5 +1,9 @@
+import { async } from "@firebase/util";
 import React, { useRef } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
 import SocialLogin from "./SocialLogin/SocialLogin";
@@ -9,10 +13,13 @@ const Login = () => {
   const passwordRef = useRef("");
   const navigate = useNavigate();
   const location = useLocation();
+  let errorMessage;
   const from = location.state?.from?.pathname || "/";
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,8 +28,18 @@ const Login = () => {
     signInWithEmailAndPassword(email, pass);
   };
 
+  const handlePasswordReset = async () => {
+    const email = emailRef.current.value;
+
+    await sendPasswordResetEmail(email);
+    alert("Sent email");
+  };
+
   if (user) {
     navigate(from, { replace: true });
+  }
+  if (error) {
+    errorMessage = <p className="text-danger text-center">{error.message}</p>;
   }
 
   return (
@@ -67,10 +84,22 @@ const Login = () => {
               Login
             </button>
           </div>
-          <p className="text-center mb-3">
+          {errorMessage}
+
+          <p className="text-center mb-2">
             New to Travel World?{" "}
-            <Link to={"/signup"} className="text-decoration-none text-danger">
+            <Link to={"/signup"} className="text-decoration-none text-primary">
               Register
+            </Link>{" "}
+          </p>
+          <p className="text-center mb-2">
+            Forget Password?{" "}
+            <Link
+              to={"/"}
+              className="text-decoration-none text-primary"
+              onClick={handlePasswordReset}
+            >
+              Reset Password
             </Link>{" "}
           </p>
         </form>
