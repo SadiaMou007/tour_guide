@@ -1,31 +1,38 @@
 [
   {
     "id": "1",
-    "img": "http://placehold.it/32x32",
+    "img": "https://i.ibb.co/Bc66PGz/sea.jpg",
+
     "title": "THE SEA EXPLORER",
 
     "time": "3",
     "people": "20-30",
+    "price": "250",
+
     "description": "Sleep in cozy hotel",
     "difficulty": "Easy"
   },
   {
     "id": "2",
-    "img": "http://placehold.it/32x32",
-    "title": "THE FOREST HIKER",
+    "img": "https://i.ibb.co/DfP5HFm/mountain.jpg",
+
+    "title": "THE MOUNTAIN HIKER",
 
     "time": "7",
     "people": "10-15",
+    "price": "200",
     "description": "Sleep in provided tents",
     "difficulty": "Medium"
   },
   {
     "id": "3",
-    "img": "http://placehold.it/32x32",
+    "img": "https://i.ibb.co/fpwdfT4/snow.jpg",
     "title": "THE SNOW ANVENTURER",
 
     "time": "5",
     "people": "15-25",
+    "price": "300",
+
     "description": "Sleep in provided tents",
     "difficulty": "Hard"
   }
