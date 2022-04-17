@@ -4,12 +4,15 @@
 }
 .s-container {
   box-shadow: 0.5px 1.5px rgb(251, 240, 240);
-  border: 1px solid rgb(143, 146, 145);
+  border: 1px solid rgb(159, 192, 164);
 }
 
 .g-btn {
-  background-image: linear-gradient(rgb(121, 124, 124), rgb(140, 145, 144));
-  font-size: 22px;
+  background-image: linear-gradient(rgb(138, 209, 173), rgb(166, 236, 181));
+  font-size: 20px;
   font-weight: 600;
   color: white;
+}
+.signup-container {
+  min: height 100vh;
 }

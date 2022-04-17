@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init.js";
 
 import "./SignUp.css";
+import SocialLogin from "../Login/SocialLogin/SocialLogin.js";
 const SignUp = () => {
   const navigate = useNavigate();
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -27,9 +28,9 @@ const SignUp = () => {
     navigate("/home");
   }
   return (
-    <div className=" w-50  container-fluid vh-100 my-5 s-container">
+    <div className=" w-50  container-fluid signup-container my-2 s-container">
       <div className="login-c">
-        <h3 className="text-center my-2">Sign Up</h3>
+        <h3 className="text-center my-2 text-success">Sign Up</h3>
         <form onSubmit={handleSignUp}>
           <div className="p-3">
             <label htmlFor="name" className="">
@@ -91,18 +92,12 @@ const SignUp = () => {
           </div>
           <p className="text-center mb-3">
             Already have an account?{" "}
-            <Link to={"/login"} className="text-decoration-none">
+            <Link to={"/login"} className="text-decoration-none text-danger">
               Login
             </Link>{" "}
           </p>
-
-          <p className="my-3 text-center">Or</p>
-          <div className="p-3">
-            <button type="submit" className="w-100 p-2 rounded border-0 g-btn">
-              Sign up with Google
-            </button>
-          </div>
         </form>
+        <SocialLogin></SocialLogin>
       </div>
     </div>
   );

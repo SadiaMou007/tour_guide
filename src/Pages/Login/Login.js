@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
+import SocialLogin from "./SocialLogin/SocialLogin";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -27,7 +28,7 @@ const Login = () => {
   return (
     <div className=" w-50  container-fluid vh-100 my-5 s-container">
       <div className="login-c">
-        <h3 className="text-center my-2">Login</h3>
+        <h3 className="text-center my-2 text-success">Login</h3>
         <form onSubmit={handleSubmit}>
           <div className="p-3">
             <label htmlFor="email" className="">
@@ -61,25 +62,19 @@ const Login = () => {
           <div className="p-3">
             <button
               type="submit"
-              className="w-100 p-2 rounded border-0 bg-primary text-white bg-opacity-50"
+              className="w-100 p-2 rounded border-0 bg-success text-white bg-opacity-50"
             >
               Login
             </button>
           </div>
           <p className="text-center mb-3">
             New to Travel World?{" "}
-            <Link to={"/signup"} className="text-decoration-none">
+            <Link to={"/signup"} className="text-decoration-none text-danger">
               Register
             </Link>{" "}
           </p>
         </form>
-
-        <p className="my-3 text-center">Or</p>
-        <div className="p-3">
-          <button type="submit" className="w-100 p-2 rounded border-0 g-btn">
-            Sign up with Google
-          </button>
-        </div>
+        <SocialLogin></SocialLogin>
       </div>
     </div>
   );
