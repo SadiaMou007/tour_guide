@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Service.css";
 
 const Service = ({ service }) => {
@@ -28,7 +29,7 @@ const Service = ({ service }) => {
             <div>
               <h1>Price: ${price}</h1>
               <button className="border-0 p-3 w-100 rounded book-btn">
-                Book Now
+                <Link to="/serviceBooking">Book Now</Link>
               </button>
             </div>
           </div>
