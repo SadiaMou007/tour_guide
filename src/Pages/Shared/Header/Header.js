@@ -2,7 +2,7 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
 import "./Header.css";
 const Header = () => {
@@ -15,13 +15,13 @@ const Header = () => {
   return (
     <Navbar sticky="top" className="my-nav" expand="lg">
       <Container>
-        <Navbar.Brand href="#home" className="text-light">
+        <Navbar.Brand href="#" className="text-light">
           Travel World
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home">
+            <Nav.Link href="#">
               <NavLink
                 to={"/home"}
                 className={({ isActive }) =>
@@ -32,7 +32,7 @@ const Header = () => {
               </NavLink>
             </Nav.Link>
 
-            <Nav.Link href="#services">
+            <Nav.Link href="#">
               <NavLink
                 to={"/services"}
                 className={({ isActive }) =>
@@ -42,7 +42,7 @@ const Header = () => {
                 SERVICES
               </NavLink>
             </Nav.Link>
-            <Nav.Link href="#reviews">
+            <Nav.Link href="#">
               <NavLink
                 to={"/reviews"}
                 className={({ isActive }) =>
@@ -74,7 +74,7 @@ const Header = () => {
               </NavLink>
             </Nav.Link>
 
-            <Nav.Link href="#login">
+            <Nav.Link href="#">
               {user ? (
                 <button
                   className="border-0 p-1 rounded me-2"

@@ -12,7 +12,7 @@ const ServiceBooking = () => {
   return (
     <div className="w-50 mx-auto vh-100 my-4">
       <div className="border mt-3 p-4">
-        <h2 className="text-info text-center my-3"> Checkout</h2>
+        <h2 className="text-info text-center my-3">START BOOKING NOW</h2>
         <div>
           <h3>Service Id: {serviceId}</h3>
           <div>

@@ -1,3 +1,7 @@
 .footer {
-  background-color: gray;
+  background-color: rgb(48, 46, 46);
+}
+.line {
+  height: 1px;
+  background-color: white;
 }
