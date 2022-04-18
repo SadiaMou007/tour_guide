@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const ServiceBooking = () => {
   const { serviceId } = useParams();
   const navigate = useNavigate();
+
   const handleNavigate = () => {
     navigate("/services");
   };

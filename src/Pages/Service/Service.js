@@ -28,9 +28,12 @@ const Service = ({ service }) => {
           <div class="back">
             <div>
               <h1>Price: ${price}</h1>
-              <button className="border-0 p-3 w-100 rounded book-btn">
-                <Link to={"/service/" + id}>Book Now</Link>
-              </button>
+
+              <Link to={"/service/" + id}>
+                <button className="border-0 p-3 w-100 rounded book-btn">
+                  Book Now!
+                </button>
+              </Link>
             </div>
           </div>
         </div>
