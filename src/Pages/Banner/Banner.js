@@ -12,7 +12,7 @@ const Banner = () => {
     setIndex(selectedIndex);
   };
   return (
-    <div className=" mb-4 container">
+    <div className=" mb-4">
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img
@@ -44,7 +44,6 @@ const Banner = () => {
             src={banner3}
             alt="Third slide"
           />
-
           <Carousel.Caption>
             <h2 className="mb-3">You're going to fall in love with nature</h2>
             <h5 className="mb-5">Let's give yourself some refreshment</h5>

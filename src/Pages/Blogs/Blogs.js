@@ -1,13 +1,12 @@
 import React from "react";
-import { Card, ListGroup, Table } from "react-bootstrap";
-import "./Blogs.css";
+import { Table } from "react-bootstrap";
 
 const Blogs = () => {
   return (
-    <div className="container blogs my-5">
-      <Card>
-        <ListGroup variant="flush">
-          <ListGroup.Item>
+    <div className="container my-5">
+      <div>
+        <div>
+          <div>
             <h4 className="text-success my-3">
               Q1: Difference between Authentication and Authorization?
             </h4>
@@ -48,8 +47,8 @@ const Blogs = () => {
                 </tbody>
               </Table>
             </div>
-          </ListGroup.Item>
-          <ListGroup.Item>
+          </div>
+          <div>
             <h4 className="my-3 text-success">
               Q2: Why use Firebase? What other options do you have to implement
               authentication?
@@ -67,8 +66,8 @@ const Blogs = () => {
               <li>Social authentication.</li>
               <li>Password authentication.</li>
             </ul>
-          </ListGroup.Item>
-          <ListGroup.Item>
+          </div>
+          <div>
             <h4 className="my-3 text-success">
               Q3: What other services firebase provide except authentication?
             </h4>
@@ -81,9 +80,9 @@ const Blogs = () => {
               <li>Predictions.</li>
               <li>Cloud Firestore.</li>
             </ul>
-          </ListGroup.Item>
-        </ListGroup>
-      </Card>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

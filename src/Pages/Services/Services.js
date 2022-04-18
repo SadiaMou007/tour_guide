@@ -18,7 +18,7 @@ const Services = () => {
         ))}
       </Row>
       <div className="mx-auto w-25 mb-3 p-3">
-        <btn className="btn btn-pill bg-success text-white w-100 mx-auto p-2">
+        <btn className="btn btn-pill w-100 mx-auto p-2 g-btn">
           DISCOVER ALL TOURS
         </btn>
       </div>

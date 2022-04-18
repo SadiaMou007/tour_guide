@@ -43,7 +43,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className=" w-50  container-fluid signup-container my-4 s-container">
+    <div className=" w-50  container-fluid signup-container my-5 s-container">
       <div className="login-c">
         <h3 className="text-center my-2 text-success">Sign Up</h3>
         <form onSubmit={handleSignUp}>
@@ -106,7 +106,7 @@ const SignUp = () => {
             <button
               disabled={!agree}
               type="submit"
-              className="w-100 p-2 rounded border-0 bg-success text-white bg-opacity-50"
+              className="w-100 p-2 rounded border-0 g-btn"
             >
               Sign Up
             </button>

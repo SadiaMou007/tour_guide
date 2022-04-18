@@ -1,3 +1,8 @@
-.review-container {
-  min-height: 100vh;
+.review-img {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.review-img:hover {
+  transform: scale(1.1);
 }

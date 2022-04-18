@@ -86,10 +86,7 @@ const Login = () => {
           </div>
 
           <div className="p-3">
-            <button
-              type="submit"
-              className="w-100 p-2 rounded border-0 bg-success text-white bg-opacity-50"
-            >
+            <button type="submit" className="w-100 p-2 rounded border-0 g-btn">
               Login
             </button>
           </div>

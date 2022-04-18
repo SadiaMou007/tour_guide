@@ -23,13 +23,36 @@ const Reviews = () => {
   ];
   return (
     <div className="review-container container">
-      <h4>WE MAKE PEOPLE GENUINELY HAPPY</h4>
-      <div className="row">
-        {userReview.map((review) => (
-          <div className="col-lg-4 col-md-6 col-sm-12">
-            {review.description}
-          </div>
-        ))}
+      <h4 className="text-success text-center">
+      PEOPLES REVIEW
+      </h4>
+      <br></br>
+      <div className="container">
+        {userReview.map((review) => {
+          return (
+            <>
+              <div className="shadow-lg bg-light p-3" key={review.id}>
+                <div className="row">
+                  <div className="col-md-4">
+                    <img
+                      src={review.img}
+                      className="review-img rounded"
+                      width="200px"
+                      height="120px"
+                      alt="reviewimage"
+                    />
+                  </div>
+                  <div className="col-md-8">
+                    <h5 className="text-info">{review.name}</h5>
+                    <p>{review.description}</p>
+                  </div>
+                </div>
+              </div>
+              <br></br>
+              <br></br>
+            </>
+          );
+        })}
       </div>
     </div>
   );
