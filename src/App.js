@@ -13,6 +13,7 @@ import Service from "./Pages/Service/Service";
 import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 import ServiceBooking from "./Pages/ServiceBooking/ServiceBooking";
 import SignUp from "./Pages/SignUp/SignUp";
+import Reviews from "./Pages/Reviews/Reviews";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/service" element={<Service></Service>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
+        <Route path="/reviews" element={<Reviews></Reviews>}></Route>
         <Route
           path="/service/:serviceId"
           element={

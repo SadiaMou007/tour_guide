@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import React, { useRef } from "react";
 import {
   useSendPasswordResetEmail,
@@ -6,7 +5,11 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
+import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "./SocialLogin/SocialLogin";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -30,15 +33,22 @@ const Login = () => {
 
   const handlePasswordReset = async () => {
     const email = emailRef.current.value;
-    await sendPasswordResetEmail(email);
-    alert("Sent email");
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent email");
+    } else {
+      toast("Enter your email address");
+    }
   };
 
-  if (user) {
-    navigate(from, { replace: true });
+  if (loading || sending) {
+    return <Loading></Loading>;
   }
   if (error) {
     errorMessage = <p className="text-danger text-center">{error.message}</p>;
+  }
+  if (user) {
+    navigate(from, { replace: true });
   }
 
   return (
@@ -84,25 +94,26 @@ const Login = () => {
             </button>
           </div>
           {errorMessage}
-
-          <p className="text-center mb-2">
-            New to Travel World?{" "}
-            <Link to={"/signup"} className="text-decoration-none text-primary">
-              Register
-            </Link>{" "}
-          </p>
-          <p className="text-center mb-2">
-            Forget Password?{" "}
-            <Link
-              to={"/"}
-              className="text-decoration-none text-primary"
-              onClick={handlePasswordReset}
-            >
-              Reset Password
-            </Link>{" "}
-          </p>
         </form>
+
+        <p className="text-center mb-2">
+          New to Travel World?{" "}
+          <Link to={"/signup"} className="text-decoration-none text-primary">
+            Register
+          </Link>{" "}
+        </p>
+        <p className="text-center mb-2">
+          Forget Password?{" "}
+          <button
+            className="border-0 bg-white text-primary"
+            onClick={handlePasswordReset}
+          >
+            Reset Password
+          </button>{" "}
+        </p>
+
         <SocialLogin></SocialLogin>
+        <ToastContainer />
       </div>
     </div>
   );

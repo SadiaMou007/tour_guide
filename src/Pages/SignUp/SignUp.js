@@ -9,6 +9,7 @@ import auth from "../../Firebase/firebase.init.js";
 
 import "./SignUp.css";
 import SocialLogin from "../Login/SocialLogin/SocialLogin.js";
+import Loading from "../Shared/Loading/Loading.js";
 
 const SignUp = () => {
   const [agree, setAgree] = useState(false);
@@ -17,14 +18,13 @@ const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
-  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const [updateProfile, updating] = useUpdateProfile(auth);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const name = e.target.name.value;
     const pass = e.target.password.value;
-    const cpass = e.target.confirmPassword.value;
 
     await createUserWithEmailAndPassword(email, pass);
     await updateProfile({ displayName: name });
@@ -38,9 +38,12 @@ const SignUp = () => {
   if (error) {
     console.log(error.message);
   }
+  if (loading || updating) {
+    return <Loading></Loading>;
+  }
 
   return (
-    <div className=" w-50  container-fluid signup-container my-2 s-container">
+    <div className=" w-50  container-fluid signup-container my-4 s-container">
       <div className="login-c">
         <h3 className="text-center my-2 text-success">Sign Up</h3>
         <form onSubmit={handleSignUp}>
@@ -83,17 +86,7 @@ const SignUp = () => {
               />
             </div>
           </div>
-          <div className="p-3">
-            <label htmlFor="confirm-password">Confirm Password</label>
-            <div className="input-wrapper">
-              <input
-                type="password"
-                name="confirmPassword"
-                id="confirm-password"
-                className="w-100 p-2 rounded"
-              />
-            </div>
-          </div>
+
           <div>
             <input
               onClick={() => setAgree(!agree)}

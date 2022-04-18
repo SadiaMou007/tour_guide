@@ -40,7 +40,7 @@
 }
 .book-btn {
   font-size: 22px;
-  background-image: linear-gradient(rgb(39, 160, 182), rgb(225, 238, 238));
+  background-image: linear-gradient(rgb(39, 182, 134), rgb(225, 238, 238));
   font-weight: 600;
   transition: all 0.2s ease-in-out;
   cursor: pointer;

@@ -2,7 +2,7 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import auth from "../../../Firebase/firebase.init";
 import "./Header.css";
 const Header = () => {
@@ -22,37 +22,75 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#home">
-              <Link to={"/home"} className="item">
-                Home
-              </Link>
+              <NavLink
+                to={"/home"}
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+              >
+                HOME
+              </NavLink>
             </Nav.Link>
-            <Nav.Link href="#about">
-              <Link to={"/about"} className="item">
-                About
-              </Link>
-            </Nav.Link>
+
             <Nav.Link href="#services">
-              <Link to={"/services"} className="item">
-                Services
-              </Link>
+              <NavLink
+                to={"/services"}
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+              >
+                SERVICES
+              </NavLink>
+            </Nav.Link>
+            <Nav.Link href="#reviews">
+              <NavLink
+                to={"/reviews"}
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+              >
+                REVIEWS
+              </NavLink>
             </Nav.Link>
             <Nav.Link href="#blogs">
-              <Link to={"/blogs"} className="item">
-                Blogs
-              </Link>
+              <NavLink
+                to={"/blogs"}
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+              >
+                BLOGS
+              </NavLink>
             </Nav.Link>
+
+            <Nav.Link>
+              <NavLink
+                to={"/about"}
+                className={({ isActive }) =>
+                  isActive ? "active-link" : "link"
+                }
+              >
+                ABOUT
+              </NavLink>
+            </Nav.Link>
+
             <Nav.Link href="#login">
               {user ? (
                 <button
                   className="border-0 p-1 rounded me-2"
                   onClick={handleSignOut}
                 >
-                  Logout
+                  LOGOUT
                 </button>
               ) : (
-                <Link to={"/login"} className="item">
-                  Login
-                </Link>
+                <NavLink
+                  to={"/login"}
+                  className={({ isActive }) =>
+                    isActive ? "active-link" : "link"
+                  }
+                >
+                  LOGIN
+                </NavLink>
               )}
             </Nav.Link>
           </Nav>

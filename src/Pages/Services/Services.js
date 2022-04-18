@@ -11,12 +11,17 @@ const Services = () => {
   }, []);
   return (
     <div className="container my-5 bg-light">
-      <h2 className="text-center text-success my-3 p-2">Services</h2>
+      <h3 className="text-center text-success my-3 p-2">MY SERVICES </h3>
       <Row xs={1} md={2} lg={3} className="g-4">
         {services.map((service) => (
           <Service key={service.id} service={service}></Service>
         ))}
       </Row>
+      <div className="mx-auto w-25 mb-3 p-3">
+        <btn className="btn btn-pill bg-success text-white w-100 mx-auto p-2">
+          DISCOVER ALL TOURS
+        </btn>
+      </div>
     </div>
   );
 };
