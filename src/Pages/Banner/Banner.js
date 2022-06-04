@@ -21,7 +21,9 @@ const Banner = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h2 className="mb-3">Live adventures like you never have before</h2>
+            <h2 className="mb-3">
+              Live adventures like you never have before!
+            </h2>
             <h5 className="mb-5">It is the chance to explore the world.</h5>
           </Carousel.Caption>
         </Carousel.Item>
