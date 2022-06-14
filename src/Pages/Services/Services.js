@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
-import Service from "../Service/Service";
 
+import Service from "../Service/Service";
+import pageTitle from "../Shared/pageTitle";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
@@ -11,6 +12,7 @@ const Services = () => {
   }, []);
   return (
     <div className="container my-5 bg-light" id="services">
+      <pageTitle title={"Services"}></pageTitle>
       <h3 className="text-center text-success my-3 p-2">MY SERVICES </h3>
       <Row xs={1} md={2} lg={3} className="g-4">
         {services.map((service) => (

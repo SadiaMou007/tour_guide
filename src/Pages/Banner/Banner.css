@@ -1,9 +1,12 @@
 .banner-img {
-  height: 550px;
+  height: 580px;
   object-fit: cover;
 }
 @media only screen and (max-width: 768px) {
   .banner-img {
     height: 300px;
   }
+}
+.b-c {
+  font-size: 60px;
 }
