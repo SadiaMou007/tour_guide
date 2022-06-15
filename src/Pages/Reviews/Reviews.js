@@ -31,7 +31,7 @@ const Reviews = () => {
     },
   ];
   return (
-    <div className="review-container container mt-3">
+    <div className="review-container container pt-3">
       <h3 className="text-success text-center my-4">PEOPLES REVIEW</h3>
       <br></br>
       <div className="container">
@@ -40,7 +40,7 @@ const Reviews = () => {
             <>
               <div className="shadow-lg bg-light p-3" key={review.id}>
                 <div className="row">
-                  <div className="col-md-4 d-flex justify-content-center align-items-center">
+                  <div className="col-md-4 d-flex justify-content-center align-items-center rounded">
                     <div>
                       {" "}
                       <img
@@ -54,12 +54,12 @@ const Reviews = () => {
                   </div>
                   <div className="col-md-8 p-2">
                     <div className="social d-flex align-items-center my-2 bg-light">
-                      <h5 className=" my-2 me-3">{review.name}</h5>
+                      <h5 className=" my-2 me-3 name">{review.name}</h5>
                       <img src={fb} alt="" />
                       <img src={insta} alt="" />
                     </div>
-                    <h6>{review.title}</h6>
-                    <p>{review.description}</p>
+                    <h6 className="px-3">{review.title}</h6>
+                    <p className="px-3">{review.description}</p>
                   </div>
                 </div>
               </div>

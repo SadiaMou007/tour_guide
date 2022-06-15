@@ -8,6 +8,12 @@ const ServiceBooking = () => {
   const handleNavigate = () => {
     navigate("/services");
   };
+  const bookedMsg = () => {
+    const b = window.confirm("Are you sure want to book service?");
+    if (b) {
+      alert("Successfully Booked");
+    }
+  };
 
   return (
     <div className="w-50 mx-auto vh-100 my-4">
@@ -37,7 +43,10 @@ const ServiceBooking = () => {
             />
           </div>
           <div className="d-flex align-items-center flex-column">
-            <button className="border-0 p-2 m-2 text-white bg-info w-50 rounded">
+            <button
+              className="border-0 p-2 m-2 text-white bg-info w-50 rounded"
+              onClick={bookedMsg}
+            >
               Proceed Checkout
             </button>
             <button
